@@ -1,251 +1,264 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Untuk Dara Ismayantri ♡</title>
+<title>A Little Universe for Dara ♡</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
 :root{
-  --bg:#070711;--card:rgba(18,18,35,.72);--line:rgba(255,255,255,.11);
-  --pink:#ff5fa2;--purple:#9b7bff;--white:#f8f7ff;--muted:#aaa8bc;
+  --bg:#080e1c;
+  --panel:#101a2c;
+  --gold:#e8c98c;
+  --pink:#eaa3b8;
+  --text:#f7f2e9;
+  --muted:#aab4c7;
+  --line:rgba(232,201,140,.2);
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  min-height:100vh;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--white);
-  background:
-    radial-gradient(circle at 20% 10%,rgba(255,95,162,.18),transparent 28%),
-    radial-gradient(circle at 85% 25%,rgba(155,123,255,.18),transparent 30%),
-    linear-gradient(145deg,#05050c,#0b0815 55%,#090711);
-  overflow-x:hidden;
+  min-height:100vh;background:
+  radial-gradient(ellipse at 15% 10%,#26314c 0,transparent 40%),
+  radial-gradient(ellipse at 90% 70%,#301c35 0,transparent 35%),
+  var(--bg);
+  color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden
 }
 button,input{font:inherit}
-button{cursor:pointer}
+button{cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-2px)}
 .hidden{display:none!important}
-.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:28px}
+.screen{display:none;min-height:100vh;padding:22px;align-items:center;justify-content:center}
 .screen.active{display:flex}
-.glow{position:fixed;width:320px;height:320px;border-radius:50%;filter:blur(90px);opacity:.18;pointer-events:none;background:var(--pink);top:-120px;left:-100px}
-.glow.two{background:var(--purple);top:auto;left:auto;right:-130px;bottom:-130px}
-
 .card{
-  width:min(900px,100%);padding:34px;border:1px solid var(--line);border-radius:28px;
-  background:var(--card);backdrop-filter:blur(22px);box-shadow:0 30px 100px rgba(0,0,0,.45)
+  width:min(850px,100%);padding:clamp(24px,5vw,52px);
+  border:1px solid var(--line);border-radius:28px;
+  background:linear-gradient(145deg,rgba(21,32,51,.94),rgba(12,17,32,.92));
+  box-shadow:0 30px 100px #0005
 }
 .center{text-align:center}
-.eyebrow{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#aaa6bd;margin-bottom:13px}
-h1{font-size:clamp(34px,7vw,68px);line-height:1.02;letter-spacing:-2px}
-h2{font-size:clamp(26px,5vw,42px);margin-bottom:10px}
-p{color:var(--muted);line-height:1.7}
-.gradient{background:linear-gradient(90deg,#fff,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{
+  color:var(--gold);font-size:11px;letter-spacing:4px;
+  text-transform:uppercase;margin-bottom:16px
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.08}
+h2{font-size:clamp(29px,5vw,44px);margin-bottom:12px}
+p{color:var(--muted);line-height:1.8}
+.gold{
+  background:linear-gradient(100deg,#fff2ce,var(--gold),#f0aabd);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.btn{
+  border:1px solid var(--gold);border-radius:999px;padding:13px 24px;
+  background:var(--gold);color:#172033;font-weight:700
+}
+.btn.alt{background:transparent;color:var(--text);border-color:#ffffff30}
 input{
-  width:100%;padding:16px 18px;border-radius:15px;border:1px solid var(--line);
-  background:rgba(255,255,255,.06);color:white;outline:none;text-align:center;font-size:24px;letter-spacing:9px;margin:22px 0 10px
+  display:block;width:100%;max-width:300px;margin:25px auto 12px;
+  padding:15px;border:1px solid var(--line);border-radius:14px;
+  background:#080e1c;color:white;text-align:center;outline:none
 }
-input:focus{border-color:rgba(255,95,162,.6)}
-.primary,.secondary{
-  border:0;border-radius:15px;padding:14px 22px;font-weight:700;color:white;transition:.2s
-}
-.primary{background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 12px 30px rgba(255,95,162,.22)}
-.secondary{background:rgba(255,255,255,.07);border:1px solid var(--line)}
-button:hover{transform:translateY(-2px)}
-.error{height:22px;color:#ff7c9f;font-size:13px}
-.dots{display:flex;gap:7px;justify-content:center;margin:22px 0}
-.dot{width:7px;height:7px;border-radius:50%;background:#3a3948}
-.dot.on{background:var(--pink);box-shadow:0 0 12px var(--pink)}
-.game-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:22px}
-.badge{padding:7px 11px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:#c8c5d4}
-.game-area{min-height:350px;display:flex;align-items:center;justify-content:center}
-.game-content{width:min(650px,100%);text-align:center}
-.number-input{max-width:260px;letter-spacing:2px;font-size:18px}
-.feedback{min-height:28px;margin:15px 0;color:#ddd}
-.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:470px;margin:auto}
+input:focus{border-color:var(--gold)}
+.error{min-height:25px;color:#f2a4b7;font-size:13px}
+.pills{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.pills i{width:6px;height:6px;border-radius:50%;background:#4b566c}
+.pills i:first-child{background:var(--gold)}
+.gamehead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:25px}
+.tag{font-size:12px;color:var(--gold);border:1px solid var(--line);border-radius:99px;padding:8px 12px}
+.gamearea{min-height:330px;display:grid;place-items:center;text-align:center}
+.gamecontent{width:100%;max-width:570px}
+.feedback{min-height:30px;margin:14px 0;color:var(--gold)}
+.memorygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:430px;margin:22px auto}
 .memory{
-  aspect-ratio:1;border:1px solid var(--line);border-radius:16px;background:#121222;
-  color:transparent;font-size:28px;transition:.25s
+  aspect-ratio:1;border:1px solid var(--line);border-radius:15px;
+  background:#172238;color:transparent;font-size:27px
 }
-.memory.open{background:rgba(255,95,162,.13);color:white}
-.heart-zone{
-  position:relative;height:310px;max-width:650px;margin:auto;overflow:hidden;
-  border:1px solid var(--line);border-radius:20px;background:rgba(0,0,0,.15)
+.memory.open{color:var(--gold);background:#34415a}
+.zone{
+  position:relative;overflow:hidden;height:260px;margin-top:20px;
+  border:1px solid var(--line);border-radius:18px;background:#080e1c
 }
 .heart{
-  position:absolute;
-  font-size:30px;
-  background:none;
-  border:0;
-  color:#ff5fa2;
-  animation:fall linear forwards
+  position:absolute;top:-35px;border:0;background:none;color:var(--pink);
+  font-size:28px;animation:drop linear forwards
 }
-@keyframes fall{from{transform:translateY(-50px) rotate(0)}to{transform:translateY(360px) rotate(180deg)}}
-.score{font-weight:800;color:var(--pink)}
-.envelope-wrap{text-align:center}
+@keyframes drop{to{transform:translateY(310px) rotate(240deg);opacity:.2}}
 .envelope{
-  width:min(390px,90vw);height:245px;margin:28px auto 10px;position:relative;
-  cursor:pointer;perspective:900px;filter:drop-shadow(0 25px 35px rgba(0,0,0,.4))
+  width:min(350px,90%);height:220px;margin:30px auto 18px;
+  position:relative;cursor:pointer;perspective:800px
 }
-.env-back{position:absolute;inset:0;background:linear-gradient(145deg,#6e2048,#321d50);border-radius:16px}
-.env-paper{
-  position:absolute;left:7%;width:86%;height:88%;top:5%;background:#fffafc;color:#281c28;
-  border-radius:10px;padding:24px 20px;text-align:left;z-index:2;transition:transform .8s ease;box-shadow:0 8px 20px rgba(0,0,0,.2)
+.envback{position:absolute;inset:0;border-radius:12px;background:#c8a978}
+.envpaper{
+  position:absolute;z-index:2;left:7%;top:6%;width:86%;height:88%;
+  padding:24px 15px;border-radius:8px;background:#fff9ed;color:#263047;
+  transition:transform .8s;box-shadow:0 5px 20px #0003
 }
-.env-paper h3{margin-bottom:8px}
-.env-front{position:absolute;inset:0;z-index:4;overflow:hidden}
-.env-front:before,.env-front:after{content:"";position:absolute;bottom:0;width:70%;height:100%;background:#512044}
-.env-front:before{left:0;clip-path:polygon(0 0,100% 100%,0 100%)}
-.env-front:after{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
-.env-flap{
-  position:absolute;z-index:5;top:0;left:0;width:100%;height:55%;
-  background:linear-gradient(145deg,#8a2e5d,#47205a);clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:top;transition:transform .8s ease
+.envpaper p{color:#596176;font-size:13px}
+.envfront{
+  position:absolute;inset:0;z-index:4;border-radius:12px;overflow:hidden
 }
-.envelope.open .env-flap{transform:rotateX(180deg)}
-.envelope.open .env-paper{transform:translateY(-135px)}
-.tap{font-size:13px;color:#8f8ca0}
-.final{padding:25px 0 70px;display:none}
-.final.active{display:block}
-.final-inner{width:min(1000px,92%);margin:auto}
-.hero-final{text-align:center;padding:75px 0 45px}
+.envfront:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(145deg,#e3c38d,#a98353);
+  clip-path:polygon(0 0,50% 65%,100% 0,100% 100%,0 100%)
+}
+.envflap{
+  position:absolute;z-index:5;inset:0 0 auto;height:57%;
+  background:#f0d6a7;clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;transition:transform .7s
+}
+.envelope.open .envflap{transform:rotateX(180deg)}
+.envelope.open .envpaper{transform:translateY(-105px)}
+.hint{font-size:12px;color:var(--muted);letter-spacing:2px}
+#finalScreen{display:none;padding:25px 0 70px}
+#finalScreen.active{display:block}
+.wrap{width:min(950px,90%);margin:auto}
+.hero{text-align:center;padding:75px 0 35px}
 .photo{
-  width:220px;height:220px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 30px;
-  border:5px solid rgba(255,255,255,.12);box-shadow:0 0 0 12px rgba(255,95,162,.05),0 25px 60px rgba(0,0,0,.45)
+  width:210px;height:210px;object-fit:cover;border-radius:50%;
+  border:3px solid var(--gold);padding:7px;margin:0 auto 28px;
+  display:block;background:#182238;box-shadow:0 0 0 12px #e8c98c0b
 }
-.photo-fallback{display:none}
+.photoFallback{
+  width:210px;height:210px;margin:0 auto 28px;border:1px solid var(--line);
+  border-radius:50%;display:grid;place-items:center;color:var(--gold)
+}
+.subtitle{max-width:560px;margin:16px auto 0}
+.section{margin:48px 0}
+.divider{width:70px;height:1px;background:var(--gold);margin:20px auto}
+.cake{position:relative;width:190px;height:150px;margin:55px auto 30px}
+.plate{position:absolute;bottom:0;left:-15px;width:220px;height:15px;border-radius:50%;background:#d7d7dd}
+.cakebody{
+  position:absolute;bottom:15px;left:10px;width:170px;height:90px;
+  border-radius:12px 12px 18px 18px;background:linear-gradient(#f0bdc9,#c77d9b)
+}
+.icing{position:absolute;bottom:88px;left:10px;width:170px;height:24px;border-radius:50%;background:#fff0e9}
+.candle{position:absolute;bottom:109px;left:87px;width:16px;height:44px;background:repeating-linear-gradient(45deg,#e8c98c 0 6px,#fff1d5 6px 12px);border-radius:4px}
+.flame{position:absolute;bottom:150px;left:88px;width:15px;height:22px;border-radius:50% 50% 45% 45%;background:#ffd76e;box-shadow:0 0 24px #ffd76e;animation:flicker .7s infinite alternate}
+@keyframes flicker{to{transform:scale(.8);opacity:.7}}
 .letter{
-  margin-top:25px;padding:34px;border:1px solid var(--line);border-radius:25px;background:rgba(255,255,255,.045);
-  line-height:1.9;color:#d9d7e3
+  border:1px solid var(--line);border-radius:24px;padding:clamp(23px,5vw,43px);
+  background:linear-gradient(135deg,#121d30d9,#111526d9);line-height:1.95
 }
 .letter p{margin-bottom:16px}
-.cake-area{text-align:center;margin:50px 0}
-.cake{position:relative;width:190px;height:145px;margin:65px auto 0}
-.plate{position:absolute;bottom:0;left:-15px;width:220px;height:17px;border-radius:50%;background:#d9d5df}
-.cake-body{position:absolute;bottom:17px;left:10px;width:170px;height:88px;border-radius:12px 12px 18px 18px;background:linear-gradient(#ff87b6,#d94c88);box-shadow:inset 0 -10px rgba(0,0,0,.08)}
-.cream{position:absolute;bottom:85px;left:10px;width:170px;height:25px;border-radius:50%;background:#fff}
-.candle{position:absolute;bottom:105px;left:86px;width:18px;height:48px;border-radius:6px;background:linear-gradient(90deg,#b9a2ff,#ffb3d2)}
-.flame{position:absolute;left:88px;bottom:151px;width:15px;height:23px;background:#ffd36a;border-radius:50% 50% 45% 45%;box-shadow:0 0 25px #ffb52e;animation:flicker .65s infinite alternate}
-@keyframes flicker{to{transform:scale(.82) translateY(2px);opacity:.75}}
-.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
-.confetti i{position:absolute;top:-20px;width:7px;height:14px;animation:conf 3s linear forwards}
-@keyframes conf{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.letter .signature{text-align:right;color:var(--gold);margin-top:25px}
+.wishes{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:25px}
+.wish{border:1px solid var(--line);border-radius:17px;padding:22px 15px;background:#ffffff06;text-align:center}
+.wish b{display:block;color:var(--gold);margin-bottom:8px}
+.wish p{font-size:13px}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.confetti i{position:absolute;top:-20px;width:6px;height:13px;background:var(--gold);animation:conf 3s linear forwards}
+@keyframes conf{to{transform:translateY(110vh) rotate(700deg);opacity:0}}
 .music{
-  position:fixed;right:18px;bottom:18px;z-index:30;width:52px;height:52px;border-radius:50%;
-  border:1px solid var(--line);background:rgba(20,18,35,.85);color:white;backdrop-filter:blur(12px)
+  position:fixed;right:18px;bottom:18px;z-index:30;width:49px;height:49px;
+  border:1px solid var(--line);border-radius:50%;background:#142039;color:var(--gold)
 }
 @media(max-width:600px){
- .card{padding:24px;border-radius:22px}
- .screen{padding:16px}
- .game-area{min-height:320px}
- .memory-grid{gap:8px}
- .memory{border-radius:12px}
- .letter{padding:23px}
+  .card{border-radius:22px}.gamearea{min-height:300px}
+  .wishes{grid-template-columns:1fr}
+  .hero{padding-top:50px}
 }
 </style>
 </head>
-<body>
 
-<div class="glow"></div><div class="glow two"></div>
+<body>
 <audio id="music" src="musik.mp3" loop preload="auto"></audio>
-<button class="music" id="musicBtn" title="Musik">♪</button>
+<button class="music" id="musicBtn" aria-label="Putar atau jeda musik">♫</button>
 
 <section id="pinScreen" class="screen active">
   <div class="card center">
-    <div class="eyebrow">A private birthday experience</div>
-    <h1 class="gradient">For Dara</h1>
-    <p style="margin-top:14px">Masukkan PIN untuk membuka kejutan kecil ini.</p>
-    <input id="pin" inputmode="numeric" maxlength="4" placeholder="••••">
+    <div class="kicker">A little universe, just for you</div>
+    <h1 class="gold">Dear Dara.</h1>
+    <div class="divider"></div>
+    <p>Ada sesuatu yang sudah disiapkan khusus untukmu.<br>Masukkan PIN untuk memulai perjalanan kecil ini.</p>
+    <input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="• • • •">
     <div class="error" id="pinError"></div>
-    <button class="primary" onclick="checkPin()">Buka kejutan</button>
-    <div class="dots"><i class="dot on"></i><i class="dot"></i><i class="dot"></i></div>
+    <button class="btn" onclick="checkPin()">Buka ceritanya ↗</button>
+    <div class="pills"><i></i><i></i><i></i></div>
+    <p style="font-size:11px;margin-top:25px">MADE WITH CARE ♡</p>
   </div>
 </section>
 
 <section id="gameScreen" class="screen">
   <div class="card">
-    <div class="game-head">
-      <div><div class="eyebrow" id="gameLabel">Challenge 01</div><h2 id="gameTitle">Tebak Angka</h2></div>
-      <div class="badge" id="gameCount">1 / 3</div>
+    <div class="gamehead">
+      <div><div class="kicker" id="gameLabel">Little challenge 01</div><h2 id="gameTitle">Tebak Angka</h2></div>
+      <span class="tag" id="gameCount">01 / 03</span>
     </div>
-    <div class="game-area"><div class="game-content" id="gameContent"></div></div>
+    <div class="gamearea"><div class="gamecontent" id="gameContent"></div></div>
   </div>
 </section>
 
 <section id="envelopeScreen" class="screen">
-  <div class="card center envelope-wrap">
-    <div class="eyebrow">One last thing</div>
-    <h2 class="gradient">Ada sesuatu untukmu</h2>
-    <p>Klik amplopnya dan buka perlahan.</p>
+  <div class="card center">
+    <div class="kicker">Before the final page</div>
+    <h2 class="gold">A letter for you.</h2>
+    <p>Ada beberapa kata yang ingin kusampaikan.<br>Klik amplopnya untuk membukanya.</p>
     <div class="envelope" id="envelope" onclick="openEnvelope()">
-      <div class="env-back"></div>
-      <div class="env-paper">
-        <h3>Untuk Dara ♡</h3>
-        <p>Aku punya sedikit pesan yang ingin kusampaikan...</p>
-      </div>
-      <div class="env-front"></div>
-      <div class="env-flap"></div>
+      <div class="envback"></div>
+      <div class="envpaper"><h3>Untuk Dara ♡</h3><p>Semoga kamu selalu menemukan alasan untuk tersenyum, bahkan di hari yang biasa saja.</p></div>
+      <div class="envfront"></div><div class="envflap"></div>
     </div>
-    <div class="tap" id="envHint">KLIK AMPLOP</div>
-    <button class="primary hidden" id="continueBtn" onclick="showFinal()">Lanjut</button>
+    <div class="hint" id="envHint">TAP TO OPEN</div>
+    <button class="btn hidden" id="continueBtn" onclick="showFinal()">Baca suratnya →</button>
   </div>
 </section>
 
-<section id="finalScreen" class="final">
-  <div class="final-inner">
-    <div class="hero-final">
-      <div class="eyebrow">Happy Birthday</div>
-      <img class="photo" src="foto.jpg" alt="Dara Ismayantri"
-           onerror="this.style.display='none';document.getElementById('photoError').style.display='block'">
-      <div id="photoError" class="hidden">
-        <p>Foto belum ditemukan. Pastikan file bernama <b>foto.jpg</b>.</p>
-      </div>
-      <h1 class="gradient">Dara Ismayantri</h1>
-      <p style="font-size:18px;margin-top:15px">
-        Selamat ulang tahun. Semoga hari ini menjadi awal dari banyak hal baik.
-      </p>
-    </div>
+<section id="finalScreen">
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker">A day made for you</div>
+      <img class="photo" id="daraPhoto" src="foto.jpg" alt="Foto Dara Ismayantri">
+      <div id="photoFallback" class="photoFallback hidden">FOTO DARA ♡</div>
+      <h1 class="gold">Dara Ismayantri</h1>
+      <p class="subtitle">Hari ini bukan cuma tentang bertambahnya usia, tetapi juga tentang semua hal indah yang masih menunggumu di depan sana.</p>
+    </header>
 
-    <div class="cake-area">
-      <div class="eyebrow">Make a wish</div>
+    <div class="section center">
+      <div class="kicker">Make a wish</div>
+      <h2>A little birthday magic.</h2>
+      <p>Pejamkan mata sebentar, lalu buat satu harapan.</p>
       <div class="cake">
-        <div class="flame"></div>
-        <div class="candle"></div>
-        <div class="cream"></div>
-        <div class="cake-body"></div>
-        <div class="plate"></div>
+        <div class="flame" id="flame"></div><div class="candle"></div>
+        <div class="icing"></div><div class="cakebody"></div><div class="plate"></div>
+      </div>
+      <button class="btn" onclick="blowCandle()">Tiup lilinnya ✨</button>
+      <button class="btn alt" onclick="relightCandle()">Nyalakan lagi</button>
+    </div>
+
+    <article class="letter">
+      <div class="kicker">Words from the heart</div>
+      <h2 class="gold">Untuk kamu, Dara.</h2>
+      <div class="divider" style="margin-left:0"></div>
+      <p>Selamat ulang tahun, Dara Ismayantri. ♡</p>
+      <p>Hari ini adalah hari spesialmu. Semoga di usia yang baru ini, kamu selalu diberi kesehatan, ketenangan, kebahagiaan, dan keberanian untuk mengejar semua hal yang kamu impikan.</p>
+      <p>Aku berharap hidup mempertemukanmu dengan lebih banyak hal baik. Dengan orang-orang yang tulus, kesempatan yang membawamu berkembang, dan momen sederhana yang bisa membuatmu tersenyum tanpa alasan yang rumit.</p>
+      <p>Kalau suatu hari semuanya terasa berat, jangan lupa bahwa kamu tidak harus selalu terlihat kuat. Tidak apa-apa beristirahat, mengambil waktu untuk diri sendiri, dan berjalan pelan-pelan. Kamu tetap berharga, bahkan ketika hari-harimu tidak berjalan sempurna.</p>
+      <p>Semoga hal-hal yang selama ini kamu doakan satu per satu menemukan jalannya. Semoga kamu semakin mengenal dirimu sendiri, semakin percaya pada kemampuanmu, dan tidak pernah kehilangan sisi baik yang membuatmu menjadi dirimu.</p>
+      <p>Terima kasih sudah menjadi bagian dari cerita ini. Semoga ulang tahunmu dipenuhi senyum, kejutan kecil, dan kenangan yang ingin kamu simpan lama-lama. Semoga tahun ini membawa cerita yang jauh lebih indah dari yang kamu bayangkan.</p>
+      <p>Selamat bertambah usia, Dara. Tetap jadi dirimu sendiri, ya. Jangan lupa bahagia dan jangan terlalu keras pada diri sendiri.</p>
+      <p><b>May this new chapter be gentle, beautiful, and full of love. Happy birthday. ♡</b></p>
+      <p class="signature">Dengan doa dan harapan baik,<br><b>Radit Aditya</b></p>
+    </article>
+
+    <div class="section center">
+      <div class="kicker">Three little wishes</div>
+      <h2 class="gold">For your new chapter.</h2>
+      <div class="wishes">
+        <div class="wish"><b>✦ Happiness</b><p>Semoga kamu menemukan kebahagiaan bahkan dalam hal-hal kecil.</p></div>
+        <div class="wish"><b>♡ Courage</b><p>Semoga kamu berani mencoba dan percaya pada langkahmu sendiri.</p></div>
+        <div class="wish"><b>☾ Peace</b><p>Semoga hatimu selalu punya tempat untuk pulang dan beristirahat.</p></div>
       </div>
     </div>
 
-    <div class="letter">
-      <p><b>Untuk Dara Ismayantri,</b></p>
-
-      <p>Selamat ulang tahun! 🎂</p>
-
-      <p>
-        Hari ini adalah hari spesial kamu. Semoga bertambahnya usia membawa lebih banyak
-        kebahagiaan, ketenangan, kesehatan, dan kesempatan untuk mewujudkan semua hal yang kamu inginkan.
-      </p>
-
-      <p>
-        Jangan lupa untuk tetap menjadi diri kamu sendiri. Terus melangkah, terus berkembang,
-        dan jangan terlalu keras kepada diri sendiri ketika sesuatu belum berjalan sesuai rencana.
-      </p>
-
-      <p>
-        Semoga orang-orang baik selalu berada di sekelilingmu, senyum kamu selalu punya alasan,
-        dan setiap harapan yang kamu simpan pelan-pelan menemukan jalannya.
-      </p>
-
-      <p>
-        Terima kasih sudah menjadi seseorang yang begitu berarti.
-        Semoga tahun ini jauh lebih indah dari tahun-tahun sebelumnya.
-      </p>
-
-      <p style="margin-top:28px"><b>Happy birthday, Dara. ♡</b></p>
-
-      <p style="text-align:right;color:#aaa8bc">
-        — Radit Aditya
-      </p>
-    </div>
-
-    <div class="center" style="margin-top:35px">
-      <button class="primary" onclick="celebrate()">Rayakan lagi ✨</button>
+    <div class="center" style="padding:15px 0 50px">
+      <p style="margin-bottom:20px">Satu hari spesial, satu halaman kecil, dan banyak doa baik untukmu.</p>
+      <button class="btn" onclick="celebrate()">Rayakan sekali lagi ✨</button>
+      <p style="font-size:12px;margin-top:28px">MADE FOR DARA · WITH ♡</p>
     </div>
   </div>
 </section>
@@ -254,303 +267,155 @@ button:hover{transform:translateY(-2px)}
 
 <script>
 const PIN="2610";
+let game=1, target=0, opened=[], matched=[], score=0;
+let heartTimer=null, spawnTimer=null, gameEnded=false;
 
-let game=1,
-    numberTarget=0,
-    memoryOpen=[],
-    memoryMatched=[],
-    catchScore=0,
-    heartTimer=null;
+const $=id=>document.getElementById(id);
+const screens=["pinScreen","gameScreen","envelopeScreen","finalScreen"];
 
-const pinScreen=document.getElementById("pinScreen");
-const gameScreen=document.getElementById("gameScreen");
-const envelopeScreen=document.getElementById("envelopeScreen");
-const finalScreen=document.getElementById("finalScreen");
-const music=document.getElementById("music");
-
-document.getElementById("pin").addEventListener("keydown",e=>{
-  if(e.key==="Enter")checkPin()
+$("pin").addEventListener("keydown",e=>{if(e.key==="Enter")checkPin()});
+$("daraPhoto").addEventListener("error",()=>{
+  $("daraPhoto").classList.add("hidden");
+  $("photoFallback").classList.remove("hidden");
 });
 
+function showScreen(id){
+  screens.forEach(s=>$(s).classList.remove("active"));
+  if(id==="finalScreen")$(id).style.display="block";
+  else $(id).classList.add("active");
+}
 function checkPin(){
-  const input=document.getElementById("pin").value;
-  const error=document.getElementById("pinError");
-
-  if(input===PIN){
-    pinScreen.classList.remove("active");
-    gameScreen.classList.add("active");
-    music.play().catch(()=>{});
+  if($("pin").value===PIN){
+    showScreen("gameScreen");
+    $("music").play().catch(()=>{});
+    $("musicBtn").textContent="Ⅱ";
     loadGame(1);
   }else{
-    error.textContent="PIN salah. Coba lagi.";
-    document.getElementById("pin").value="";
+    $("pinError").textContent="PIN belum tepat. Coba lagi, ya.";
+    $("pin").value="";
   }
 }
-
 function loadGame(n){
-  game=n;
-
-  document.getElementById("gameCount").textContent=n+" / 3";
-  document.getElementById("gameLabel").textContent="Challenge 0"+n;
-
-  const content=document.getElementById("gameContent");
-
-  if(n===1) numberGame(content);
-  if(n===2) memoryGame(content);
-  if(n===3) catchGame(content);
+  clearInterval(heartTimer);clearInterval(spawnTimer);
+  game=n;gameEnded=false;
+  $("gameCount").textContent="0"+n+" / 03";
+  $("gameLabel").textContent="Little challenge 0"+n;
+  $("gameTitle").textContent=["","Tebak Angka","Cocokkan Simbol","Tangkap Hati"][n];
+  const el=$("gameContent");
+  if(n===1)numberGame(el);
+  if(n===2)memoryGame(el);
+  if(n===3)catchGame(el);
 }
-
 function nextGame(){
-  if(game<3){
-    loadGame(game+1);
-  }else{
-    gameScreen.classList.remove("active");
-    envelopeScreen.classList.add("active");
-  }
+  if(gameEnded)return;
+  gameEnded=true;
+  clearInterval(heartTimer);clearInterval(spawnTimer);
+  if(game<3)loadGame(game+1);
+  else showScreen("envelopeScreen");
 }
-
 function numberGame(el){
-  numberTarget=Math.floor(Math.random()*20)+1;
-
-  el.innerHTML=`
-    <div style="font-size:55px;margin-bottom:10px">?</div>
-    <p>Tebak angka rahasia dari <b>1 sampai 20</b>.</p>
-
-    <input
-      id="guess"
-      class="number-input"
-      type="number"
-      min="1"
-      max="20"
-      placeholder="Angka"
-    >
-
-    <div class="feedback" id="guessFeedback"></div>
-
-    <button class="primary" onclick="guessNumber()">Tebak</button>
-  `;
+  target=Math.floor(Math.random()*20)+1;
+  el.innerHTML=`<div style="font-size:48px;color:var(--gold)">?</div>
+  <p>Tebak angka rahasia dari 1 sampai 20.</p>
+  <input id="guess" type="number" min="1" max="20" placeholder="Masukkan angka">
+  <div class="feedback" id="guessFeedback"></div>
+  <button class="btn" onclick="guessNumber()">Coba tebak</button>`;
+  $("guess").addEventListener("keydown",e=>{if(e.key==="Enter")guessNumber()});
 }
-
 function guessNumber(){
-  const v=Number(document.getElementById("guess").value);
-  const f=document.getElementById("guessFeedback");
-
-  if(!v){
-    f.textContent="Masukkan angka dulu.";
-    return;
-  }
-
-  if(v===numberTarget){
-    f.textContent="Benar! 🎉";
-    setTimeout(nextGame,700);
-  }else{
-    f.textContent=v<numberTarget
-      ?"Terlalu kecil."
-      :"Terlalu besar.";
-  }
+  const v=Number($("guess").value), f=$("guessFeedback");
+  if(!v||v<1||v>20){f.textContent="Masukkan angka 1 sampai 20.";return}
+  if(v===target){f.textContent="Benar! Kamu berhasil ✨";setTimeout(nextGame,700)}
+  else f.textContent=v<target?"Masih terlalu kecil.":"Sedikit terlalu besar.";
 }
-
 function memoryGame(el){
-  const symbols=["♡","♡","★","★","✦","✦","☾","☾"];
-
-  symbols.sort(()=>Math.random()-.5);
-
-  memoryOpen=[];
-  memoryMatched=[];
-
-  el.innerHTML=`
-    <p style="margin-bottom:20px">
-      Temukan semua pasangan simbol.
-    </p>
-
-    <div class="memory-grid">
-      ${symbols.map((s,i)=>`
-        <button
-          class="memory"
-          data-i="${i}"
-          data-v="${s}"
-          onclick="flipMemory(this)"
-        >?</button>
-      `).join("")}
-    </div>
-
-    <div class="feedback" id="memoryFeedback"></div>
-  `;
+  const symbols=["♡","♡","★","★","✦","✦","☾","☾"].sort(()=>Math.random()-.5);
+  opened=[];matched=[];
+  el.innerHTML=`<p>Temukan semua pasangan simbol yang sama.</p>
+  <div class="memorygrid">${symbols.map((s,i)=>`<button class="memory" data-i="${i}" data-v="${s}" onclick="flipMemory(this)">?</button>`).join("")}</div>
+  <div class="feedback" id="memoryFeedback"></div>`;
 }
-
 function flipMemory(btn){
-  const i=Number(btn.dataset.i);
-
-  if(
-    memoryMatched.includes(i) ||
-    memoryOpen.includes(i) ||
-    memoryOpen.length===2
-  )return;
-
-  btn.classList.add("open");
-  btn.textContent=btn.dataset.v;
-  memoryOpen.push(i);
-
-  if(memoryOpen.length===2){
-    const [a,b]=memoryOpen;
-    const buttons=[...document.querySelectorAll(".memory")];
-
+  const i=+btn.dataset.i;
+  if(matched.includes(i)||opened.includes(i)||opened.length===2)return;
+  btn.classList.add("open");btn.textContent=btn.dataset.v;opened.push(i);
+  if(opened.length===2){
+    const [a,b]=opened, buttons=[...document.querySelectorAll(".memory")];
     if(buttons[a].dataset.v===buttons[b].dataset.v){
-
-      memoryMatched.push(a,b);
-      memoryOpen=[];
-
-      if(memoryMatched.length===8){
-        document.getElementById("memoryFeedback").textContent="Perfect! 🎉";
-        setTimeout(nextGame,800);
+      matched.push(a,b);opened=[];
+      if(matched.length===8){
+        $("memoryFeedback").textContent="Semua pasangan ditemukan! ♡";
+        setTimeout(nextGame,700);
       }
-
     }else{
-
       setTimeout(()=>{
-        buttons[a].classList.remove("open");
-        buttons[b].classList.remove("open");
-
-        buttons[a].textContent="?";
-        buttons[b].textContent="?";
-
-        memoryOpen=[];
+        buttons[a].classList.remove("open");buttons[b].classList.remove("open");
+        buttons[a].textContent="?";buttons[b].textContent="?";opened=[];
       },650);
     }
   }
 }
-
 function catchGame(el){
-  catchScore=0;
-
-  el.innerHTML=`
-    <p>
-      Tekan hati yang jatuh sebanyak mungkin dalam <b>15 detik</b>.
-    </p>
-
-    <p style="margin:10px 0">
-      Score:
-      <span class="score" id="score">0</span>
-      &nbsp; • &nbsp;
-      Waktu:
-      <span class="score" id="time">15</span>
-    </p>
-
-    <div class="heart-zone" id="heartZone"></div>
-  `;
-
+  score=0;
+  el.innerHTML=`<p>Tangkap hati sebanyak mungkin sebelum waktunya habis!</p>
+  <p style="margin-top:12px">Skor: <b id="score" style="color:var(--gold)">0</b> · Waktu: <b id="time" style="color:var(--gold)">15</b></p>
+  <div class="zone" id="zone"></div><div class="feedback">Waktumu 15 detik. Mulai sekarang!</div>`;
   let time=15;
-
   heartTimer=setInterval(()=>{
     time--;
-
-    document.getElementById("time").textContent=time;
-
-    spawnHeart();
-
+    if($("time"))$("time").textContent=time;
     if(time<=0){
-      clearInterval(heartTimer);
-      clearInterval(window.spawnTimer);
-
-      setTimeout(nextGame,700);
+      clearInterval(heartTimer);clearInterval(spawnTimer);
+      if(!gameEnded){$("memoryFeedback")?.remove();setTimeout(nextGame,800)}
     }
   },1000);
-
-  window.spawnTimer=setInterval(spawnHeart,550);
-
-  for(let i=0;i<3;i++){
-    setTimeout(spawnHeart,i*200);
-  }
+  spawnTimer=setInterval(spawnHeart,480);
 }
-
 function spawnHeart(){
-  const zone=document.getElementById("heartZone");
-
-  if(!zone)return;
-
+  const zone=$("zone");if(!zone||gameEnded)return;
   const b=document.createElement("button");
-
-  b.className="heart";
-
-  b.textContent=["♥","♡","✦"][Math.floor(Math.random()*3)];
-
-  b.style.left=Math.random()*90+"%";
-
-  b.style.animationDuration=
-    (1.8+Math.random()*1.5)+"s";
-
+  b.className="heart";b.textContent=["♥","♡","✦"][Math.floor(Math.random()*3)];
+  b.style.left=Math.random()*88+"%";
+  b.style.animationDuration=(1.8+Math.random()*1.3)+"s";
   b.onclick=()=>{
-    catchScore++;
-
-    document.getElementById("score").textContent=catchScore;
-
-    b.remove();
+    score++;if($("score"))$("score").textContent=score;b.remove();
   };
-
-  zone.appendChild(b);
-
-  setTimeout(()=>b.remove(),3500);
+  zone.appendChild(b);setTimeout(()=>b.remove(),3200);
 }
-
 function openEnvelope(){
-  const env=document.getElementById("envelope");
-
+  const env=$("envelope");
   if(env.classList.contains("open"))return;
-
   env.classList.add("open");
-
-  document.getElementById("envHint").textContent=
-    "Pesannya sudah terbuka ♡";
-
-  document.getElementById("continueBtn").classList.remove("hidden");
-
+  $("envHint").textContent="SURATNYA SUDAH TERBUKA ♡";
+  $("continueBtn").classList.remove("hidden");
   celebrate();
 }
-
 function showFinal(){
-  envelopeScreen.classList.remove("active");
-  finalScreen.classList.add("active");
-
-  celebrate();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  showScreen("finalScreen");celebrate();window.scrollTo({top:0,behavior:"smooth"});
 }
-
+function blowCandle(){
+  $("flame").style.display="none";
+  celebrate();
+}
+function relightCandle(){$("flame").style.display="block"}
 function celebrate(){
-  const box=document.getElementById("confetti");
-
-  box.innerHTML="";
-
-  for(let i=0;i<80;i++){
+  const box=$("confetti");box.innerHTML="";
+  for(let i=0;i<75;i++){
     const p=document.createElement("i");
-
     p.style.left=Math.random()*100+"%";
+    p.style.background=["#e8c98c","#eaa3b8","#d9dfff","#ffffff"][i%4];
     p.style.animationDelay=Math.random()*1.2+"s";
-    p.style.animationDuration=
-      (2+Math.random()*2.5)+"s";
-
-    p.style.transform=
-      `rotate(${Math.random()*360}deg)`;
-
+    p.style.animationDuration=(2+Math.random()*2.5)+"s";
     box.appendChild(p);
   }
-
   setTimeout(()=>box.innerHTML="",5000);
 }
-
-document.getElementById("musicBtn").onclick=()=>{
-  if(music.paused){
-    music.play().catch(()=>{});
-    document.getElementById("musicBtn").textContent="Ⅱ";
-  }else{
-    music.pause();
-    document.getElementById("musicBtn").textContent="♪";
-  }
+$("musicBtn").onclick=()=>{
+  const m=$("music");
+  if(m.paused){m.play().catch(()=>{});$("musicBtn").textContent="Ⅱ"}
+  else{m.pause();$("musicBtn").textContent="♫"}
 };
 </script>
-
 </body>
-  </html>
+</html>
+```
